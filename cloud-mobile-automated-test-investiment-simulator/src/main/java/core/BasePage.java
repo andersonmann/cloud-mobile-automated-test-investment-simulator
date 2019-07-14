@@ -8,21 +8,15 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import com.aventstack.extentreports.Status;
-
-import io.appium.java_client.MobileElement;
-import util.ExtentTestManager;
 
 /**
  * @author anderson.mann
  *
  */
-public class BasePage extends DriverFactory {
-	protected ExtentTestManager log = new ExtentTestManager();
-
+public class BasePage extends BrowserStackTestNGTest {
 	/**
 	 * This auxiliary method proved a smart wait for a element
 	 * 
@@ -63,7 +57,7 @@ public class BasePage extends DriverFactory {
 		try {
 			waitForElement(by);
 			driver.findElement(by).sendKeys(text);
-			driver.hideKeyboard();
+			// driver.hideKeyboard();
 		} catch (Exception e) {
 			throw new NoSuchElementException("Element not found: " + e.getMessage());
 		}
@@ -81,7 +75,6 @@ public class BasePage extends DriverFactory {
 	public String getValue(By by) throws NoSuchElementException {
 		try {
 			waitForElement(by);
-			log.getTest().log(Status.INFO, "geting text of the locator: " + by);
 			return driver.findElement(by).getText();
 		} catch (Exception e) {
 			throw new NoSuchElementException("Element not found: " + e.getMessage());
@@ -116,8 +109,7 @@ public class BasePage extends DriverFactory {
 	public boolean existElement(By by) throws NoSuchElementException {
 		try {
 			waitForElement(by);
-			List<MobileElement> elementos = driver.findElements(by);
-			log.getTest().log(Status.INFO, "validating existence of the text: " + by);
+			List<WebElement> elementos = driver.findElements(by);
 			return elementos.size() > 0;
 		} catch (Exception e) {
 			throw new NoSuchElementException("Element not found: " + e.getMessage());
@@ -128,7 +120,6 @@ public class BasePage extends DriverFactory {
 	 * This method scroll down the page
 	 */
 	public void scrollToDown() {
-		log.getTest().log(Status.INFO, "scroll down the page");
 		((JavascriptExecutor) driver).executeScript("scroll(0,400)");
 	}
 }
