@@ -20,21 +20,21 @@ public class FieldsValidationTest extends BrowserStackTestNGTest {
 		driver.findElement(By.xpath("//button[@class='btn btnAmarelo btnSimular']")).click();
 	}
 
-	@Test
+	@Test(priority = 0)
 	public void validateMandatoryFields1() {
 		simulateError();
 		String value = driver.findElement(By.id("valorAplicar-error")).getText();
 		assertEquals("Valor mínimo de 20.00", value);
 	}
 
-	@Test
+	@Test(priority = 1)
 	public void validateMandatoryFields2() {
 		simulateError();
 		String value = driver.findElement(By.id("valorInvestir-error")).getText();
 		assertEquals("Valor mínimo de 20.00", value);
 	}
 
-	@Test
+	@Test(priority = 2)
 	public void validateMandatoryFields3() {
 		simulateError();
 		String value = driver.findElement(By.id("tempo-error")).getText();
