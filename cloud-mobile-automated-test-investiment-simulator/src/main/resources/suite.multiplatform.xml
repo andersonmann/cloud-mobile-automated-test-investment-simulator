@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite
-	name="Suite multi platform running in the cloud on real devices">
+	name="Suite multi platform running in the cloud on real devices"
+	parallel="methods" thread-count="1" configfailurepolicy="continue"
+	verbose="1">
 
-	<test name="Regression test at the device iPhone XS">
+	<test name="Regression test at the device iPhone XS ">
 		<parameter name="config" value="single.conf.json" />
 		<parameter name="environment" value="iPhone XS" />
 		<classes>
@@ -13,10 +14,9 @@
 		</classes>
 	</test>
 
-	<test name="Regression test at the device Samsung Galaxy S10">
+	<test name="Regression test at the device Samsung Galaxy S10 ">
 		<parameter name="config" value="single.conf.json" />
-		<parameter name="environment" value="Samsung 
-		Galaxy S10" />
+		<parameter name="environment" value="Samsung Galaxy S10" />
 		<classes>
 			<class name="test.FieldsValidationTest" />
 			<class name="test.SimulationTest" />
