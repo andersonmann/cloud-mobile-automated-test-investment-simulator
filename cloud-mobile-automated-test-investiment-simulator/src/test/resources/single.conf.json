@@ -1,0 +1,21 @@
+{
+	"server": "hub-cloud.browserstack.com",
+	"user": "testesicredi1",
+	"key": "sq7MHetDbsGcMHy5YF7K",
+	"capabilities": {
+		"name": "Bstack-[TestNG] Sample Test",
+		"browserstack.debug": true
+	},
+	"environments": {
+		"iPhone XS": {
+			"device": "iPhone XS",
+			"realMobile": "true",
+			"os_version": "12"
+		},
+		"Samsung Galaxy S10": {
+			"device": "Samsung Galaxy S10",
+			"realMobile": "true",
+			"os_version": "9.0"
+		}
+	}
+}
