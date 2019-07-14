@@ -8,13 +8,19 @@
 		<parameter name="environment" value="iPhone XS" />
 		<classes>
 			<class name="test.FieldsValidationTest" />
-			<!-- <class name="test.SimulationResultTest" /> -->
+			<class name="test.SimulationTest" />
+			<class name="test.SimulationResultTest" />
 		</classes>
 	</test>
 
-	<!-- <test name="Regression test at the device Samsung Galaxy S10"> <parameter 
-		name="config" value="single.conf.json" /> <parameter name="environment" value="Samsung 
-		Galaxy S10" /> <classes> <class name="test.FieldsValidationTest" /> <class 
-		name="test.SimulationResultTest" /> </classes> </test> -->
-
+	<test name="Regression test at the device Samsung Galaxy S10">
+		<parameter name="config" value="single.conf.json" />
+		<parameter name="environment" value="Samsung 
+		Galaxy S10" />
+		<classes>
+			<class name="test.FieldsValidationTest" />
+			<class name="test.SimulationTest" />
+			<class name="test.SimulationResultTest" />
+		</classes>
+	</test>
 </suite>
