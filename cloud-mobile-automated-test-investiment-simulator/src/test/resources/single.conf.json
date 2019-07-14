@@ -3,7 +3,7 @@
 	"user": "testesicredi1",
 	"key": "sq7MHetDbsGcMHy5YF7K",
 	"capabilities": {
-		"name": "Bstack-[TestNG] Sample Test",
+		"name": "Mobile tests at real devices",
 		"browserstack.debug": true
 	},
 	"environments": {
