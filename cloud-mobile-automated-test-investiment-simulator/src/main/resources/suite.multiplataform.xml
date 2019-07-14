@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Single">
+<suite name="suite running in the cloud on real devices">
 
 	<test name="Regression test at the device iPhone XS">
 		<parameter name="config" value="single.conf.json" />
