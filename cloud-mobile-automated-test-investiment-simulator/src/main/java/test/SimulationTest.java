@@ -9,14 +9,14 @@ import org.openqa.selenium.By;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import core.BaseTest;
+import core.BrowserStackTestNGTest;
 import page.SimulationPage;
 
 /**
  * @author anderson.mann
  *
  */
-public class SimulationTest extends BaseTest {
+public class SimulationTest extends BrowserStackTestNGTest {
 	private SimulationPage simulation = new SimulationPage();
 	private static final String ACTION_1 = "//a[@class='btn btnAmarelo btnRefazer']";
 	public static final String PROFILE1 = "pessoa fisica";
@@ -44,7 +44,7 @@ public class SimulationTest extends BaseTest {
 	@DataProvider(name = "profile2-years")
 	public static Object[][] pj2() {
 		return new Object[][] { { PROFILE2, "500000", "10000", "2", "anos" } };
-	}	
+	}
 
 	@Test(dataProvider = "profile1-months", priority = 0)
 	public void validSimulationProfile1Months(String profile, String initialValue, String monthlyValue, String time,
