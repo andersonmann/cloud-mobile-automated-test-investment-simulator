@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebElement;
 
 import com.aventstack.extentreports.Status;
 
@@ -23,15 +24,13 @@ public class SimulationPage extends BasePage implements Simulation {
 	public void selectProfile(String profile) {
 		try {
 			if (profile.equalsIgnoreCase("pessoa juridica")) {
-				List<MobileElement> rdBtProfile = driver.findElements(By.name("perfil"));
+				List<WebElement> rdBtProfile = driver.findElements(By.name("perfil"));
 				boolean bValue = false;
 				bValue = rdBtProfile.get(0).isSelected();
 				if (bValue == true) {
-					log.getTest().log(Status.INFO, "selecting the profile 'Para sua empresa ou agronegócio'");
 					rdBtProfile.get(1).click();
 				}
 			} else {
-				log.getTest().log(Status.INFO, "selecting the profile 'Para você'");
 				return;
 			}
 		} catch (Exception e) {
@@ -40,38 +39,31 @@ public class SimulationPage extends BasePage implements Simulation {
 	}
 
 	public void inputInitialValue(String value) {
-		log.getTest().log(Status.INFO, "typing value to apply: " + value);
 		write(By.id("valorAplicar"), value);
 	}
 
 	public void inputMonthlylValue(String value) {
-		log.getTest().log(Status.INFO, "typing value to invest: " + value);
 		write(By.id("valorInvestir"), value);
 	}
 
 	public void inputTime(String time) {
-		log.getTest().log(Status.INFO, "typing time to invest: " + time);
 		write(By.id("tempo"), time);
 	}
 
 	public void selectTimeType(String timeType) {
 		click(By.xpath("//span[@class='seta']"));
 		if (timeType.equalsIgnoreCase("anos")) {
-			log.getTest().log(Status.INFO, "selecting the option 'Anos'");
 			click(By.xpath("//a[contains(text(),'Anos')]"));
 		} else {
-			log.getTest().log(Status.INFO, "selecting the option 'Meses'");
 			return;
 		}
 	}
 
 	public void clicksimulateButton() {
-		log.getTest().log(Status.INFO, "clicking at the button SIMULAR");
 		click(By.xpath("//button[@class='btn btnAmarelo btnSimular']"));
 	}
 
 	public void clickCleanFormButton() {
-		log.getTest().log(Status.INFO, "clicking at the button Limpar formulário");
 		click(By.className("btn btnAmarelo btnSimular"));
 	}
 
