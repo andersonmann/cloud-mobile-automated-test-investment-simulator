@@ -12,7 +12,7 @@ import page.SimulationPage;
  * @author anderson.mann
  *
  */
-public class TTT extends BaseTest {
+public class FieldsValidationTest extends BaseTest {
 	private SimulationPage simulation = new SimulationPage();
 
 	@Test
