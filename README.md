@@ -61,7 +61,7 @@ iPhone XS
 ```
 
 ```
-"Samsung Galaxy S10
+Samsung Galaxy S10
 ```
 
 Are possible use hundreds of devices, you just need change the parameter of single.conf.json file, located at folder src/test/resources.
